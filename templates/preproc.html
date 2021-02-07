@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Natural Language Processing</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="static/css/an.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="static/css/ii.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="static/css/boot.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="static/css/car.css">
+	<link rel="stylesheet" href="static/css/default.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="static/css/sty.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+
+	function lowercase() {
+	var text= $('#lowercase_text').val();
+	  $.ajax({
+				  url: "/lower",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".lowercase").append(html);
+				});
+	};
+
+	function sent_tokenize() {
+	var text= $('#sent_tokenize_text').val();
+	  $.ajax({
+				  url: "/sent_tokenize",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".sent_tokenize").append(html);
+				});
+	};
+
+	function word_tokenize() {
+	var text= $('#word_tokenize_text').val();
+	  $.ajax({
+				  url: "/word_tokenize",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".word_tokenize").append(html);
+				});
+	};
+
+	function spell_check() {
+	var text= $('#spell_check_text').val();
+	  $.ajax({
+				  url: "/spell_check",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".spell_check").append(html);
+				});
+	};
+
+	function lemmatize() {
+	var text= $('#lemmatize_text').val();
+	  $.ajax({
+				  url: "/lemmatize",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".lemmatize").append(html);
+				});
+	};
+
+	function stemming() {
+	var text= $('#stemming_text').val();
+	  $.ajax({
+				  url: "/stemming",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".stemming").append(html);
+				});
+	};
+
+	function remove_tags() {
+	var text= $('#remove_tags_text').val();
+	  $.ajax({
+				  url: "/remove_tags",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".remove_tags").append(html);
+				});
+	};
+
+	function remove_numbers() {
+	var text= $('#remove_numbers_text').val();
+	  $.ajax({
+				  url: "/remove_numbers",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".remove_numbers").append(html);
+				});
+	};
+
+	function remove_punct() {
+	var text= $('#remove_punct_text').val();
+	  $.ajax({
+				  url: "/remove_punct",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".remove_punct").append(html);
+				});
+	};
+
+	function remove_stopwords() {
+	var text= $('#remove_stopwords_text').val();
+	  $.ajax({
+				  url: "/remove_stopwords",
+				  type: "POST",
+				  data: {text:text}
+			  }).done(function(response) {
+				var html= "";
+				response =response.result;
+					 $.each(response,function(key,val){
+					 console.log(val);
+						html+="RESULT :"+val
+					});
+					html +="";
+					$(".remove_stopwords").append(html);
+				});
+	};
+
+	  </script>
+	  <style>
+        body{
+            background-image: repeating-radial-gradient(aquamarine,aqua,darkcyan);
+            background-repeat: no-repeat;
+            background-size: 100% 206%;
+        }
+        #btn{
+            height: 30px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            display: block;
+            font-size: 18px;
+        }
+        #btn:hover{
+            background-color: deepskyblue;
+        }
+        hr{
+            border: 1px solid black;
+        }
+    </style>
+
+	</head>
+	<body>
+	<div id="fh5co-page">
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+
+			<h1 id="fh5co-logo"><a href="home"><img src="static/images/six.jpg" alt="Free HTML5 Bootstrap Website Template" width="65%" ></a></h1>
+			<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+					<li class="fh5co-active"><a href="home">Home</a></li>
+					<li><a href="preproc">PRE-PROCESSING</a></li>
+					<li><a href="summary">Automatic summarization</a></li>
+					<li><a href="others">My Profile</a></li>
+				</ul>
+			</nav>
+
+			
+
+		</aside>
+
+		<div id="fh5co-main">
+
+			<div class="fh5co-narrow-content">
+				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Text Pre-Processing</h2>
+				
+					To preprocess your text simply means to bring your text into a form that is predictable and 
+					analyzable for your task.  
+				
+			</div>
+			<div class="fh5co-testimonial" >
+				<div class="fh5co-narrow-content">
+					<div class="owl-carousel-fullwidth animate-box" data-animate-effect="fadeInLeft">
+						<table>
+							<tr>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+							<tr>
+								<td>1).</td>
+								<td>Converting text to lowercase (eg: "I AM CHOEZIN")</td>
+								<td><input type="text" id="lowercase_text"></td>
+								<td><button id="lowercase_clicked" onclick="lowercase()">Submit</button><br></td>
+								<td class="lowercase"></td>
+							</tr>
+							<tr>
+								<td>2).</td>
+								<td>Sentence tokenize(eg: "I'm Choezin. This is a test.")</td>
+								<td><input type="text" id="sent_tokenize_text"></td>
+								<td><button id="sent_tokenize_clicked" onclick="sent_tokenize()">Submit</button><br></td>
+								<td class="sent_tokenize"></td>
+							</tr>
+							<tr>
+								<td>3).</td>
+								<td>Word tokenize (eg: "I AM CHOEZIN")</td>
+								<td><input type="text" id="word_tokenize_text" ></td>
+								<td><button id="word_tokenize_clicked" onclick="word_tokenize()">Submit</button><br></td>
+								<td class="word_tokenize"></td>
+							</tr>
+							<tr>
+								<td>4).</td>
+								<td>Spell Check(eg: "Thss is a test") </td>
+								<td><input type="text" id="spell_check_text"></td>
+								<td><button id="spell_check_clicked" onclick="spell_check()">Submit</button><br></td>
+								<td class="spell_check"></td>
+							</tr>
+							
+							<tr>
+								<td>5).</td>
+								<td>Stemming(eg: "test functioning")</td>
+								<td><input type="text" id="stemming_text"></td>
+								<td><button id="stemming_clicked" onclick="stemming()">Submit</button><br></td>
+								<td class="stemming"></td>
+							</tr>
+							<tr>
+								<td>6).</td>
+								<td>Remove Tags (eg: "this <\test> tag")</td>
+								<td><input type="text" id="remove_tags_text" ></td>
+								<td><button id="remove_tags_clicked" onclick="remove_tags()">Submit</button><br></td>
+								<td class="remove_tags"></td>
+							</tr>
+							<tr>
+								<td>7).</td>
+								<td>Remove numbers (eg: "test 1243")</td>
+								<td><input type="text" id="remove_numbers_text"></td>
+								<td><button id="remove_numbers_clicked" onclick="remove_numbers()">Submit</button><br></td>
+								<td class="remove_numbers"></td>
+							</tr>
+							<tr>
+								<td>8).</td>
+								<td>Remove punctuation (eg: "test this! or $")</td>
+								<td><input type="text" id="remove_punct_text"></td>
+								<td><button id="remove_punct_clicked" onclick="remove_punct()">Submit</button><br></td>
+								<td class="remove_punct"></td>
+							</tr>
+							
+						</table>
+					</div>
+		          </div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	
+	
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
